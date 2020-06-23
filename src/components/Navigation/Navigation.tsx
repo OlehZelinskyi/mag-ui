@@ -11,23 +11,25 @@ export interface LinkType {
 
 export interface Props {
   links: LinkType[];
+  navClasses: string;
+  navListClasses: string;
 }
 
 export default (props: Props) => {
-  const { links } = props;
+  const { links, navClasses, navListClasses } = props;
   return (
-    <div>
-      <nav>
-        <ul>
-          {links.map(({ destination, label }) => (
-            <Link destination={destination} label={label} />
+    <div className={navClasses}>
+      <nav className={"w-100"}>
+        <ul className={navListClasses}>
+          {links.map(({ destination, label }, index) => (
+            <Link key={index} destination={destination} label={label} />
           ))}
         </ul>
       </nav>
 
       <Switch>
-        {links.map(({ destination, component }) => (
-          <Route path={destination} children={component} />
+        {links.map(({ destination, component }, index) => (
+          <Route key={index} path={destination} children={component} />
         ))}
       </Switch>
     </div>

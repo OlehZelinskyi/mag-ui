@@ -19,8 +19,13 @@ export default (props: Props) => {
   return (
     <div>
       <Heading label={label} little={true} />
-      {links.map(({ href, label, openMode }) => (
-        <ExternalLink href={href} label={label} openMode={openMode} />
+      {links.map(({ href, label, openMode }, index) => (
+        <ExternalLink
+          key={index}
+          href={href}
+          label={label}
+          openMode={openMode}
+        />
       ))}
     </div>
   );

@@ -4,11 +4,6 @@ import { ExternalLinkType } from "../../components/SocialMedia/SocialMedia";
 
 export const HEADER_LINKS: LinkType[] = [
   {
-    destination: "/",
-    label: "MadAppGang",
-    component: <></>,
-  },
-  {
     destination: "/services",
     label: "Services",
     component: <></>,
@@ -31,11 +26,6 @@ export const HEADER_LINKS: LinkType[] = [
   {
     destination: "/blog",
     label: "Blog",
-    component: <></>,
-  },
-  {
-    destination: "/getintouch",
-    label: "Get In Touch",
     component: <></>,
   },
 ];

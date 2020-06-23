@@ -8,6 +8,10 @@ export interface Props {
 
 export default (props: Props) => {
   const { label, size = 1, little = false } = props;
-  const HeadingTag = `h${size}`;
-  return little ? <span>{label}</span> : <HeadingTag>{label}</HeadingTag>;
+
+  return little ? (
+    <span>{label}</span>
+  ) : (
+    React.createElement(`h${size}`, null, label)
+  );
 };

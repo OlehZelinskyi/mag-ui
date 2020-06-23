@@ -1,0 +1,73 @@
+@import "../../../common.scss";
+
+.intouch-view {
+  .header-wrapper,
+  .footer-wrapper {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .header-wrapper {
+    height: 50px;
+
+    .nav-logo,
+    .navigation {
+      a {
+        color: $primary-text-color;
+        font-weight: 600;
+      }
+    }
+
+    .nav-logo,
+    .navigation,
+    .header-button-wrapper {
+      display: flex;
+      align-items: center;
+      @extend .h-100;
+    }
+
+    .nav-logo,
+    .header-button-wrapper {
+      flex-grow: 1;
+    }
+
+    .navigation {
+      flex-grow: 2;
+    }
+
+    .header-button-wrapper {
+      justify-content: flex-end;
+
+      .header-button {
+        background-color: $primary-bg-color;
+        border-radius: 32px;
+        border: none;
+        font-weight: 700;
+        @extend .h-100;
+        padding: 12px 40px 12px 40px;
+
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .intouch-footer {
+    background-color: $dark-secondary-bg-color;
+    padding: 15px 0;
+
+    a,
+    span {
+      color: $dark-text-color;
+    }
+
+    li {
+      padding: 0 20px;
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+}

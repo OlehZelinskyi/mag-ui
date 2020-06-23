@@ -1,0 +1,24 @@
+@import "../../../common.scss";
+
+.intouch-view {
+  .header-wrapper,
+  .footer-wrapper,
+  .contact-form-wrapper,
+  .visit-us-wrapper,
+  .about-wrapper {
+    max-width: 70%;
+    margin: auto;
+  }
+
+  .header-nav-list,
+  .footer-nav-list {
+    list-style: none;
+    @extend .flex-center-between;
+    padding: initial;
+  }
+
+  .header-wrapper,
+  .footer-wrapper {
+    @extend .flex-center-between;
+  }
+}

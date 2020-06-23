@@ -7,16 +7,28 @@ export interface Props {
   footerClass: string;
   footerLinks: LinkType[];
   footerInfoMsg: string;
+  footerWrapperClasses: string;
 }
 export default (props: Props) => {
-  const { footerClass, footerLinks, footerInfoMsg } = props;
+  const {
+    footerClass,
+    footerLinks,
+    footerInfoMsg,
+    footerWrapperClasses,
+  } = props;
 
   return (
     <footer className={footerClass}>
-      <Router>
-        <Navigation links={footerLinks} />
-      </Router>
-      <SiteInfo message={footerInfoMsg} />
+      <div className={footerWrapperClasses}>
+        <Router>
+          <Navigation
+            links={footerLinks}
+            navClasses={"navigation-footer"}
+            navListClasses={"footer-nav-list"}
+          />
+        </Router>
+        <SiteInfo message={footerInfoMsg} />
+      </div>
     </footer>
   );
 };
