@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import Header from "../../components/Header/Header";
 import {
   HEADER_LINKS,
@@ -15,15 +14,13 @@ import {
 } from "../constants/messages";
 import Message from "../../components/Message/Message";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import Form from "../../components/Form/Form";
+import Form from "./Form";
 import InfoBlock from "../../components/InfoBlock/InfoBlock";
 import MailBox from "../../assets/mailbox";
 import Heading from "../../components/Heading/Heading";
 import Laptop from "../../assets/laptop";
-import { sendMessage } from "./actions";
-import { UserData } from "./typings";
 
-export function InTouchView() {
+export default function InTouchView() {
   return (
     <div className={"intouch-view"}>
       <Header
@@ -100,19 +97,3 @@ export function InTouchView() {
     </div>
   );
 }
-
-const mapStateToProps = (state: {
-  [key: string]: any;
-}): { [key: string]: any } => {
-  return {
-    errors: null,
-  };
-};
-
-const mapDispatchToProps = (dispatch: Function) => {
-  return {
-    sendMessage: (userData: UserData) => dispatch(sendMessage(userData)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(InTouchView);

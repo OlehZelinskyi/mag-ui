@@ -1,12 +1,17 @@
 import React, { PureComponent, ChangeEvent } from "react";
-import Heading from "../Heading/Heading";
-import Input from "../Input/Input";
-import Textarea from "../Textarea/Textarea";
-import Button from "../Button/Button";
+import Input from "../../components/Input/Input";
+import Textarea from "../../components/Textarea/Textarea";
+import Button from "../../components/Button/Button";
+import { sendMessage } from "../../modules/intouch/actions";
+import { UserData } from "../../modules/intouch/typings";
+import { connect } from "react-redux";
+import { AnyAction } from "redux";
+import { errors$ } from "./selectors";
 
 export interface Props {
   formWrapperClasses: string;
   formClasses: string;
+  sendMessage?: (userData: UserData) => { type: string; payload: UserData };
 }
 
 export interface State {
@@ -18,7 +23,7 @@ export interface State {
   submitted: boolean;
 }
 
-export default class Form extends PureComponent<Props, State> {
+class Form extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -97,7 +102,25 @@ export default class Form extends PureComponent<Props, State> {
     event.preventDefault();
 
     const { submitted, ...userdata } = this.state;
-
-    console.warn(userdata);
+    const { sendMessage } = this.props;
+    if (typeof sendMessage === "function") {
+      sendMessage(userdata);
+    }
   };
 }
+
+const mapStateToProps = (state: {
+  [key: string]: any;
+}): { [key: string]: any } => {
+  return {
+    errors: errors$(state),
+  };
+};
+
+const mapDispatchToProps = (dispatch: Function) => {
+  return {
+    sendMessage: (userData: UserData) => dispatch(sendMessage(userData)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
