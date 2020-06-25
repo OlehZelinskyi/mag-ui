@@ -27,6 +27,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.(png|svg|jpg|gif|webp)$/,
+        use: ["file-loader", "webp-loader"],
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings

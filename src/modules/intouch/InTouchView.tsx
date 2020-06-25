@@ -20,6 +20,9 @@ import Input from "../../components/Input/Input";
 import Textarea from "../../components/Textarea/Textarea";
 import Button from "../../components/Button/Button";
 import InfoBlock from "../../components/InfoBlock/InfoBlock";
+import MailBox from "../../assets/mailbox";
+import Heading from "../../components/Heading/Heading";
+import Laptop from "../../assets/laptop";
 
 export interface State {
   form: {
@@ -61,69 +64,89 @@ export default class InTouchView extends PureComponent<{}, State> {
 
         <Section sectionClasses={"contact-form-section"}>
           <div className={"contact-form-wrapper"}>
-            <Form
-              title={"Get in touch"}
-              subTitle={"Let us know how we can help"}
-              handleSubmit={this.formSubmit}
-              formClasses={"contact-form"}
-            >
-              <Input
-                type={"text"}
-                placeholder={"Name"}
-                handleChange={this.formChange}
-                value={name ?? ""}
+            <div className={"headers-wrapper"}>
+              <Heading label={"Get in touch"} size={1} />
+              <Heading
+                label={
+                  <>
+                    Let us know
+                    <br /> how we can help
+                  </>
+                }
+                size={3}
               />
-              <Input
-                type={"email"}
-                placeholder={"Email"}
-                handleChange={this.formChange}
-                value={email ?? ""}
+            </div>
+            <div className={"form-section-content"}>
+              <Form
+                handleSubmit={this.formSubmit}
+                formWrapperClasses={"form-wrapper"}
+                formClasses={"contact-form"}
+              >
+                <Input
+                  type={"text"}
+                  placeholder={"Name"}
+                  handleChange={this.formChange}
+                  value={name ?? ""}
+                />
+                <Input
+                  type={"email"}
+                  placeholder={"Email"}
+                  handleChange={this.formChange}
+                  value={email ?? ""}
+                />
+                <Input
+                  type={"tel"}
+                  placeholder={"Phone"}
+                  handleChange={this.formChange}
+                  value={phone ?? ""}
+                />
+                <Textarea
+                  placeholder={"Message"}
+                  value={msg ?? ""}
+                  handleChange={this.formChange}
+                />
+                <div>
+                  <Button
+                    type={"submit"}
+                    label={"SEND"}
+                    buttonClasses={"form-button"}
+                  />
+                </div>
+              </Form>
+              <InfoBlock
+                infoClasses={"contact-form-info"}
+                headingLabel={"What's next"}
+                headingSize={2}
+                msg={CONTACT_FORM_INFO_MESSAGES}
               />
-              <Input
-                type={"tel"}
-                placeholder={"Phone"}
-                handleChange={this.formChange}
-                value={phone ?? ""}
+            </div>
+            <div className={"visit-us-wrapper"}>
+              <Laptop svgClasses={"laptop-svg"} />
+              <InfoBlock
+                infoClasses={"visit-us"}
+                headingLabel={"Visit Us"}
+                headingSize={2}
+                msg={VISIT_US_MESSAGES}
               />
-              <Textarea
-                placeholder={"Message"}
-                value={msg ?? ""}
-                handleChange={this.formChange}
-              />
-              <Button
-                type={"submit"}
-                label={"SEND"}
-                buttonClasses={"form-button"}
-              />
-            </Form>
-            <InfoBlock
-              infoClasses={"contact-form-info"}
-              headingLabel={""}
-              headingSize={2}
-              msg={CONTACT_FORM_INFO_MESSAGES}
-            />
-          </div>
-        </Section>
-
-        <Section sectionClasses={"visit-us-section"}>
-          <div className={"visit-us-wrapper"}>
-            <SVG />
-            <InfoBlock
-              infoClasses={"visit-us"}
-              headingLabel={""}
-              headingSize={2}
-              msg={VISIT_US_MESSAGES}
-            />
+            </div>
           </div>
         </Section>
 
         <Section sectionClasses={"about-section"}>
           <div className={"about-wrapper"}>
-            {ABOUT_SECTION_MESSAGES.map((msg, index) => (
-              <Message key={index} msg={msg} />
-            ))}
-            <SocialMedia label={"Follow Us"} links={SOCIAL_MEDIA_LINKS} />
-            <SVG />
+            <div className="about-messages-wrapper">
+              {ABOUT_SECTION_MESSAGES.map((msg, index) => (
+                <Message key={index} msg={msg} />
+              ))}
+            </div>
+            <div className="about-links-wrapper">
+              <SocialMedia
+                label={"Follow Us"}
+                links={SOCIAL_MEDIA_LINKS}
+                socialMediaLinksWrapperClasses={"social-media-links-wrapper"}
+              />
+              <MailBox svgClasses={"mailbox-svg"} />
+            </div>
           </div>
         </Section>
 

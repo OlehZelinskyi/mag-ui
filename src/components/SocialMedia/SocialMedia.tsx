@@ -11,22 +11,25 @@ export interface ExternalLinkType {
 export interface Props {
   label: string;
   links: ExternalLinkType[];
+  socialMediaLinksWrapperClasses: string;
 }
 
 export default (props: Props) => {
-  const { label, links } = props;
+  const { label, links, socialMediaLinksWrapperClasses } = props;
 
   return (
     <div>
       <Heading label={label} little={true} />
-      {links.map(({ href, label, openMode }, index) => (
-        <ExternalLink
-          key={index}
-          href={href}
-          label={label}
-          openMode={openMode}
-        />
-      ))}
+      <div className={socialMediaLinksWrapperClasses}>
+        {links.map(({ href, label, openMode }, index) => (
+          <ExternalLink
+            key={index}
+            href={href}
+            label={label}
+            openMode={openMode}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -70,4 +70,105 @@
       }
     }
   }
+
+  .about-section {
+    background-color: $dark-primary-bg-color;
+    color: $dark-text-color;
+    .social-media-links-wrapper {
+      a {
+        text-decoration: none;
+        svg {
+          color: $dark-link-bg-color;
+          background-color: $dark-text-color;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .contact-form-section {
+    background-color: $primary-bg-color;
+    background-image: url("assets/mapbackground.webp");
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    position: relative;
+
+    .contact-form-wrapper {
+      .headers-wrapper {
+        color: $white;
+        h1 {
+          font-weight: 700;
+        }
+        h3 {
+          font-weight: 100;
+        }
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+
+        input,
+        textarea {
+          padding: 20px;
+          margin-bottom: 16px;
+          color: $white;
+          background-color: $primary-form-bg-color;
+          border: none;
+          border-radius: 10px;
+          font-weight: 500;
+          outline: none;
+          font-size: 16px;
+          box-sizing: border-box;
+
+          &::placeholder {
+            color: $semi-transparent-white;
+          }
+
+          &:focus {
+            background-color: hsla(0, 0%, 100%, 0.2);
+          }
+        }
+
+        textarea {
+          min-height: 120px;
+          resize: none;
+        }
+
+        button {
+          padding: 18px 80px 14px;
+          background-color: $dark-primary-bg-color;
+          color: $white;
+          border-radius: 32px;
+          font-weight: 700;
+          border: none;
+          transition: box-shadow 0.1s ease-in-out;
+          display: inline-block;
+        }
+      }
+
+      .contact-form-info {
+        background-color: $white;
+        padding: 30px;
+        border-radius: 10px;
+
+        h2 {
+          margin-top: 0;
+        }
+      }
+      .visit-us-wrapper {
+        position: absolute;
+        bottom: -60px;
+        width: 100%;
+        .visit-us {
+          background-color: $white;
+          padding: 30px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
 }

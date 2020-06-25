@@ -61,22 +61,46 @@ export const FOOTER_LINKS: LinkType[] = [
 export const SOCIAL_MEDIA_LINKS: ExternalLinkType[] = [
   {
     href: "https://www.facebook.com/madappgang",
-    label: "FB",
+    label: (
+      <span
+        className="iconify"
+        data-icon="entypo-social:facebook-with-circle"
+        data-inline="false"
+      ></span>
+    ),
     openMode: "_blank",
   },
   {
     href: "https://twitter.com/madappgang",
-    label: "TW",
+    label: (
+      <span
+        className="iconify"
+        data-icon="ant-design:twitter-circle-filled"
+        data-inline="false"
+      ></span>
+    ),
     openMode: "_blank",
   },
   {
     href: "https://www.instagram.com/madappgang",
-    label: "INST",
+    label: (
+      <span
+        className="iconify"
+        data-icon="entypo-social:instagram-with-circle"
+        data-inline="false"
+      ></span>
+    ),
     openMode: "_blank",
   },
   {
     href: "https://medium.com/@i_49105",
-    label: "MD",
+    label: (
+      <span
+        className="iconify"
+        data-icon="ant-design:medium-circle-filled"
+        data-inline="false"
+      ></span>
+    ),
     openMode: "_blank",
   },
 ];
