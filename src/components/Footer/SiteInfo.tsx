@@ -4,7 +4,7 @@ export interface Props {
   message: string;
 }
 
-export default (props: Props) => {
+export default function SiteInfo(props: Props) {
   const { message } = props;
   return <span>{message}</span>;
-};
+}

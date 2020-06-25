@@ -6,11 +6,11 @@ export interface Props {
   openMode?: string;
 }
 
-export default (props: Props) => {
+export default function ExternalLink(props: Props) {
   const { href, label, openMode = "_blank" } = props;
   return (
     <a href={href} target={openMode}>
       {label}
     </a>
   );
-};
+}

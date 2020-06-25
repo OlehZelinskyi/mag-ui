@@ -23,21 +23,21 @@ export default (props: Props) => {
             y2="45.0312853%"
             id="linearGradient-1"
           >
-            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stopColor="#FFFFFF" stopOpacity="0" offset="0%"></stop>
             <stop
-              stop-color="#FFFFFF"
-              stop-opacity="0.359408602"
+              stopColor="#FFFFFF"
+              stopOpacity="0.359408602"
               offset="56.1070381%"
             ></stop>
-            <stop stop-color="#FFFFFF" offset="100%"></stop>
+            <stop stopColor="#FFFFFF" offset="100%"></stop>
           </linearGradient>
         </defs>
         <g
           id="Web"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           <g
             id="Web_Get_in_touch"

@@ -15,7 +15,7 @@ export interface Props {
   navListClasses: string;
 }
 
-export default (props: Props) => {
+export default function Navigation(props: Props) {
   const { links, navClasses, navListClasses } = props;
   return (
     <div className={navClasses}>
@@ -34,4 +34,4 @@ export default (props: Props) => {
       </Switch>
     </div>
   );
-};
+}

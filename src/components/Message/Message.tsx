@@ -4,7 +4,7 @@ export interface Props {
   msg: string;
 }
 
-export default (props: Props) => {
+export default function Message(props: Props) {
   const { msg } = props;
   return <p>{msg}</p>;
-};
+}

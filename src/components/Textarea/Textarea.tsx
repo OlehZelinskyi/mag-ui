@@ -4,11 +4,19 @@ export interface Props {
   value: string | number;
   handleChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
+  name: string;
+  required: boolean;
 }
 
-export default (props: Props): JSX.Element => {
-  const { value, handleChange, placeholder = "" } = props;
+export default function Textarea(props: Props): JSX.Element {
+  const { value, handleChange, placeholder = "", name, required } = props;
   return (
-    <textarea onChange={handleChange} value={value} placeholder={placeholder} />
+    <textarea
+      onChange={handleChange}
+      value={value}
+      placeholder={placeholder}
+      name={name}
+      required={required}
+    />
   );
-};
+}

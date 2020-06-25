@@ -9,7 +9,7 @@ export interface Props {
   footerInfoMsg: string;
   footerWrapperClasses: string;
 }
-export default (props: Props) => {
+export default function Footer(props: Props) {
   const {
     footerClass,
     footerLinks,
@@ -31,4 +31,4 @@ export default (props: Props) => {
       </div>
     </footer>
   );
-};
+}

@@ -12,7 +12,7 @@ export interface Props {
   headerButtonLabel: string;
   buttonWrapperClasses: string;
 }
-export default (props: Props) => {
+export default function Header(props: Props) {
   const {
     headerClass,
     headerLinks,
@@ -45,4 +45,4 @@ export default (props: Props) => {
       </Router>
     </header>
   );
-};
+}

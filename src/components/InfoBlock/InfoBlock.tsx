@@ -9,7 +9,7 @@ export interface Props {
   msg: string[];
 }
 
-export default (props: Props) => {
+export default function InfoBlock(props: Props) {
   const { infoClasses, headingLabel, headingSize, msg } = props;
   return (
     <div className={infoClasses}>
@@ -19,4 +19,4 @@ export default (props: Props) => {
       ))}
     </div>
   );
-};
+}

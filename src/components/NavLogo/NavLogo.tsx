@@ -6,8 +6,8 @@ export interface Props {
   logoClasses: string;
 }
 
-export default (props: Props) => {
+export default function NavLogo(props: Props) {
   const { label, logoClasses } = props;
 
   return <div className={logoClasses}>{label}</div>;
-};
+}

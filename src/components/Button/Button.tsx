@@ -7,11 +7,11 @@ export interface Props {
   buttonClasses: string;
 }
 
-export default (props: Props) => {
+export default function Button(props: Props) {
   const { type = "submit", label, handleClick, buttonClasses } = props;
   return (
     <button type={type} onClick={handleClick} className={buttonClasses}>
       {label}
     </button>
   );
-};
+}

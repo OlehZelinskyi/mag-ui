@@ -6,7 +6,7 @@ export interface Props {
   little?: boolean;
 }
 
-export default (props: Props) => {
+export default function Heading(props: Props) {
   const { label, size = 1, little = false } = props;
 
   return little ? (
@@ -14,4 +14,4 @@ export default (props: Props) => {
   ) : (
     React.createElement(`h${size}`, null, label)
   );
-};
+}

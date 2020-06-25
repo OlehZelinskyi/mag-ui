@@ -14,7 +14,7 @@ export interface Props {
   socialMediaLinksWrapperClasses: string;
 }
 
-export default (props: Props) => {
+export default function SocialMedia(props: Props) {
   const { label, links, socialMediaLinksWrapperClasses } = props;
 
   return (
@@ -32,4 +32,4 @@ export default (props: Props) => {
       </div>
     </div>
   );
-};
+}

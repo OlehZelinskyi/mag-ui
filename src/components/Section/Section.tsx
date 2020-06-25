@@ -5,7 +5,7 @@ export interface Props {
   children: any;
 }
 
-export default (props: Props) => {
+export default function Section(props: Props) {
   const { children, sectionClasses } = props;
   return <section className={sectionClasses}>{children}</section>;
-};
+}

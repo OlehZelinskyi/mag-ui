@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export interface Props {
   destination: string;
   label: string;
 }
-export default (props: Props) => {
+export default function Link(props: Props) {
   const { destination = "/unknown", label = "noLabel" } = props;
   return (
     <li>
-      <Link to={destination}>{label}</Link>
+      <RouterLink to={destination}>{label}</RouterLink>
     </li>
   );
-};
+}
