@@ -41,6 +41,18 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.(woff2|woff|eot|ttf)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/",
+            },
+          },
+        ],
+      },
     ],
   },
   output: {

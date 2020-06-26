@@ -43,7 +43,7 @@ export default function InTouchView() {
                   <br /> how we can help
                 </>
               }
-              size={3}
+              little={true}
             />
           </div>
           <div className={"form-section-content"}>
@@ -54,7 +54,7 @@ export default function InTouchView() {
             <InfoBlock
               infoClasses={"contact-form-info"}
               headingLabel={"What's next"}
-              headingSize={2}
+              headingSize={3}
               msg={CONTACT_FORM_INFO_MESSAGES}
             />
           </div>
@@ -62,8 +62,8 @@ export default function InTouchView() {
             <Laptop svgClasses={"laptop-svg"} />
             <InfoBlock
               infoClasses={"visit-us"}
-              headingLabel={"Visit Us"}
-              headingSize={2}
+              headingLabel={"Visit us"}
+              headingSize={3}
               msg={VISIT_US_MESSAGES}
             />
           </div>

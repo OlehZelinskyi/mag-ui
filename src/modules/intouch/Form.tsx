@@ -53,7 +53,7 @@ class Form extends PureComponent<Props, State> {
           />
           <Input
             type={"email"}
-            placeholder={"Email"}
+            placeholder={"E-mail"}
             handleChange={this.formChange}
             value={email}
             name={"email"}
@@ -61,7 +61,7 @@ class Form extends PureComponent<Props, State> {
           />
           <Input
             type={"text"}
-            placeholder={"Phone"}
+            placeholder={"Phone number"}
             handleChange={this.formChange}
             value={phone}
             name={"phone"}
