@@ -2,7 +2,7 @@ import { SEND_MESSAGE_URL } from "../constants";
 
 export default async function sendMessageAPI(data: { [key: string]: any }) {
   const response = await fetch(SEND_MESSAGE_URL, {
-    method: "GET",
+    method: "POST",
     mode: "cors",
     headers: {
       "Content-Type": "application/json",

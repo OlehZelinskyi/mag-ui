@@ -10,7 +10,7 @@ export const PREFIX = "messageReducer";
 export const RESPONSE = "response";
 export const ERRORS = "errors";
 
-export const SEND_MESSAGE_URL = "http://127.0.0.1/message";
+export const SEND_MESSAGE_URL = "http://127.0.0.1:5000/message";
 
 export const FORM_VALIDATION_CONFIG = {
   [NAME]: /^\w{2,20}$/,
