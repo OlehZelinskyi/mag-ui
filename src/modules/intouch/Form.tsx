@@ -102,7 +102,7 @@ class Form extends PureComponent<Props, State> {
               name={"msg"}
               required={true}
             />
-            <div>
+            <div className={"form-button-wrapper"}>
               <Button
                 type={"submit"}
                 label={"SEND"}

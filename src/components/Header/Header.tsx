@@ -35,6 +35,9 @@ export default function Header(props: Props) {
             navClasses={"navigation"}
             navListClasses={"header-nav-list"}
           />
+          <div className={"hamburger-menu"}>
+            <span></span>
+          </div>
           <div className={buttonWrapperClasses}>
             <Button
               label={<Link to={"/getInTouch"}>{headerButtonLabel}</Link>}
