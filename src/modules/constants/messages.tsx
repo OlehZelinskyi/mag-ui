@@ -11,3 +11,8 @@ export const CONTACT_FORM_INFO_MESSAGES: string[] = [
 export const VISIT_US_MESSAGES: string[] = [
   "Our company management and business development team is located in Sydney, Australia. Our engineering team is located in Kremenchuk, Ukraine.",
 ];
+
+export const FORM_RESPONSE: string[] = [
+  "We will look over your message and Tatiana will get back to you in 24 hours. In the meantime, you can check the Foundation section, look over our projects collection or browse through our latest blog posts.",
+  "Your mate at MadAppGang, Jack Rudenko.",
+];
