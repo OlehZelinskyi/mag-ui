@@ -22,7 +22,7 @@
       li {
         padding: 0 20px;
         a {
-          font-size: 1em;
+          font-size: 0.89em;
           font-weight: 500;
           font-family: "Helvetica Neue", Helvetica, serif;
         }
@@ -46,7 +46,8 @@
         border: none;
         font-weight: 700;
         @extend .h-100;
-        padding: 14px 40px 12px 40px;
+        font-size: 18px;
+        padding: 14px 40px 11px;
         font-family: "Circe";
 
         a {
