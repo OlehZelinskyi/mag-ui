@@ -14,8 +14,8 @@ import { SUCCESS, ERRORS, LOADING } from "./constants";
 export const modalStyles: Modal.Styles = {
   content: {
     top: "30%",
-    left: "30%",
-    right: "30%",
+    left: "5%",
+    right: "5%",
     bottom: "auto",
     padding: "30px",
     maxWidth: "450px",
