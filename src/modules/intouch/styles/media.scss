@@ -36,6 +36,11 @@
     }
   }
   .intouch-view {
+    .intouch-header,
+    .contact-form-wrapper {
+      max-width: 100%;
+    }
+
     .intouch-header {
       padding-left: 6.25%;
       padding-right: 6.25%;
@@ -76,6 +81,7 @@
           div {
             font-size: 1.125em;
             line-height: 1.444em;
+            padding: 0px 20px;
           }
         }
 
@@ -91,7 +97,7 @@
           max-width: 100%;
           margin-top: -1px;
           position: static;
-          background-color: #f3f6fa;
+          background-color: $light-white;
           border-radius: 0;
 
           .laptop-svg {
@@ -100,8 +106,10 @@
 
           .visit-us {
             flex-wrap: wrap;
-            background-color: #f3f6fa;
+            background-color: $light-white;
             padding: 24px 20px;
+            max-width: 100%;
+            position: static;
 
             h3 {
               margin-bottom: 15px;
@@ -159,7 +167,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1163px) {
   .hamburger-menu {
     display: none;
   }
@@ -172,8 +180,7 @@
     }
     .contact-form-section {
       .contact-form-wrapper {
-        .headers-wrapper,
-        .form-section-content {
+        .headers-wrapper {
           padding-left: 40px;
           padding-right: 40px;
         }
@@ -184,6 +191,8 @@
 
         .visit-us-wrapper .visit-us {
           margin: 0px 40px;
+          bottom: -30px;
+          padding: 30px;
         }
       }
     }
@@ -210,10 +219,6 @@
           padding-right: 0px;
         }
 
-        .contact-form-info {
-          margin-right: 0px;
-        }
-
         .visit-us-wrapper .visit-us {
           margin: 0px;
         }
@@ -222,6 +227,92 @@
 
     .about-wrapper .about-links-wrapper .mailbox-svg {
       right: 0px;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    .intouch-view {
+      .intouch-header,
+      .contact-form-wrapper,
+      .visit-us-wrapper {
+        max-width: 690px;
+        margin: auto;
+      }
+
+      .contact-form-section {
+        .contact-form-wrapper {
+          .form-section-content {
+            .form-wrapper,
+            .contact-form-info {
+              width: 320px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    body {
+      line-height: 1.5em;
+      font-size: 16px;
+      .intouch-view {
+        .intouch-header {
+          .header-wrapper {
+            .navigation {
+              nav {
+                ul {
+                  li {
+                    padding: 0 10px;
+                  }
+                }
+              }
+            }
+
+            .header-button-wrapper {
+              .header-button {
+                padding: 8px 25px 6px;
+                white-space: nowrap;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        .contact-form-wrapper {
+          .visit-us-wrapper {
+            .visit-us {
+              h3 {
+                margin-right: 50px;
+                white-space: nowrap;
+              }
+            }
+
+            .laptop-svg {
+              bottom: 124px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1163px) {
+  .intouch-view {
+    .contact-form-section {
+      .contact-form-wrapper {
+        .form-section-content {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+      .visit-us-wrapper {
+        .laptop-svg {
+          bottom: 102px;
+        }
+      }
     }
   }
 }

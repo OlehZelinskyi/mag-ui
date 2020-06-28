@@ -9,6 +9,10 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
+  devServer: {
+    compress: false,
+    port: 8080,
+  },
   module: {
     rules: [
       {
