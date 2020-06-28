@@ -42,7 +42,7 @@ export default function Header(props: Props) {
             navListClasses={"header-nav-list"}
           />
           <div className={"hamburger-menu"} onClick={mobileMenuHandler}>
-            <span></span>
+            <span className={isMobileMenuOpen ? "open" : ""}></span>
           </div>
           <div className={buttonWrapperClasses}>
             <Button

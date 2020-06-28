@@ -15,8 +15,19 @@
       right: 0;
       height: 3px;
       background: $primary-text-color;
-      &:after,
-      &:before {
+
+      &.open {
+        background: transparent;
+        &::after {
+          transform: translate3d(0, -8px, 0) rotate(-45deg);
+        }
+        &::before {
+          transform: translate3d(0, 8px, 0) rotate(45deg);
+        }
+      }
+
+      &::after,
+      &::before {
         content: "";
         position: absolute;
         display: block;
@@ -27,10 +38,10 @@
         -webkit-transition: all 0.25s ease-in-out;
         transition: all 0.25s ease-in-out;
       }
-      &:before {
+      &::before {
         top: -8px;
       }
-      &:after {
+      &::after {
         bottom: -8px;
       }
     }
@@ -45,6 +56,10 @@
     .intouch-header {
       padding-left: 6.25%;
       padding-right: 6.25%;
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      background: $white;
     }
 
     .header-wrapper {

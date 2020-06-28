@@ -14,15 +14,15 @@ export default function InstagramSVG(props: Props) {
         <g
           id="Symbols"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           <g
             id="Element/Footer"
             transform="translate(-1166.000000, -160.000000)"
             fill="#707E8C"
-            fill-rule="nonzero"
+            fillRule="nonzero"
           >
             <g id="Element/Footer-Copy">
               <g>
