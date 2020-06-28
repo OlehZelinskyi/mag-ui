@@ -1,6 +1,10 @@
 import { LinkType } from "../../components/Navigation/Navigation";
 import React from "react";
 import { ExternalLinkType } from "../../components/SocialMedia/SocialMedia";
+import Facebook from "../../assets/social/Facebook";
+import Twitter from "../../assets/social/Twitter";
+import Instagram from "../../assets/social/Instagram";
+import Medium from "../../assets/social/Medium";
 
 export const HEADER_LINKS: LinkType[] = [
   {
@@ -61,46 +65,22 @@ export const FOOTER_LINKS: LinkType[] = [
 export const SOCIAL_MEDIA_LINKS: ExternalLinkType[] = [
   {
     href: "https://www.facebook.com/madappgang",
-    label: (
-      <span
-        className="iconify"
-        data-icon="entypo-social:facebook-with-circle"
-        data-inline="false"
-      ></span>
-    ),
+    label: <Facebook svgClasses={"social-svg"} />,
     openMode: "_blank",
   },
   {
     href: "https://twitter.com/madappgang",
-    label: (
-      <span
-        className="iconify"
-        data-icon="ant-design:twitter-circle-filled"
-        data-inline="false"
-      ></span>
-    ),
+    label: <Twitter svgClasses={"social-svg"} />,
     openMode: "_blank",
   },
   {
     href: "https://www.instagram.com/madappgang",
-    label: (
-      <span
-        className="iconify"
-        data-icon="entypo-social:instagram-with-circle"
-        data-inline="false"
-      ></span>
-    ),
+    label: <Instagram svgClasses={"social-svg"} />,
     openMode: "_blank",
   },
   {
     href: "https://medium.com/@i_49105",
-    label: (
-      <span
-        className="iconify"
-        data-icon="ant-design:medium-circle-filled"
-        data-inline="false"
-      ></span>
-    ),
+    label: <Medium svgClasses={"social-svg"} />,
     openMode: "_blank",
   },
 ];

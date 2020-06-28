@@ -2,6 +2,7 @@ export const SEND_MESSAGE = "SEND_MESSAGE";
 export const SEND_MESSAGE_RESPONSE = "SEND_MESSAGE_RESPONSE";
 export const VALIDATION_FAILED = "VALIDATION_FAILED";
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
+export const TOGGLE_NAV_MENU = "TOGGLE_NAV_MENU";
 
 export const NAME = "name";
 export const EMAIL = "email";
@@ -13,6 +14,7 @@ export const ERRORS = "errors";
 export const LOADING = "loading";
 export const MODAL = "modal";
 export const SUCCESS = "success";
+export const MOBILE_NAV_OPEN = "mobileNavOpen";
 
 export const SEND_MESSAGE_URL = "http://127.0.0.1:5000/message";
 

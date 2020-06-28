@@ -4,7 +4,7 @@ export interface Props {
   svgClasses: string;
 }
 
-export default (props: Props) => {
+export default function MailboxSVG(props: Props) {
   const { svgClasses } = props;
 
   return (
@@ -194,4 +194,4 @@ export default (props: Props) => {
       </svg>
     </div>
   );
-};
+}

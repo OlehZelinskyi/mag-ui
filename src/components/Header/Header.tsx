@@ -11,6 +11,8 @@ export interface Props {
   headerLogoLabel: string;
   headerButtonLabel: string;
   buttonWrapperClasses: string;
+  mobileMenuHandler?: () => void;
+  isMobileMenuOpen?: boolean;
 }
 export default function Header(props: Props) {
   const {
@@ -20,6 +22,8 @@ export default function Header(props: Props) {
     headerLogoLabel,
     headerButtonLabel,
     buttonWrapperClasses,
+    mobileMenuHandler,
+    isMobileMenuOpen,
   } = props;
 
   return (
@@ -32,10 +36,12 @@ export default function Header(props: Props) {
           />
           <Navigation
             links={headerLinks}
-            navClasses={"navigation"}
+            navClasses={`navigation ${
+              isMobileMenuOpen ? "navigation-open" : ""
+            }`}
             navListClasses={"header-nav-list"}
           />
-          <div className={"hamburger-menu"}>
+          <div className={"hamburger-menu"} onClick={mobileMenuHandler}>
             <span></span>
           </div>
           <div className={buttonWrapperClasses}>

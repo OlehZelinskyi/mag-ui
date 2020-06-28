@@ -82,12 +82,14 @@
     .social-media-links-wrapper {
       a {
         text-decoration: none;
-        svg {
-          color: $dark-link-bg-color;
-          background-color: $dark-text-color;
-          width: 45px;
-          height: 45px;
-          border-radius: 50%;
+        .social-svg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          background-color: $social-icons-bg;
+          border-radius: 100%;
         }
       }
     }

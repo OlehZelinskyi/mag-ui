@@ -16,23 +16,47 @@ import Message from "../../components/Message/Message";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import Form from "./Form";
 import InfoBlock from "../../components/InfoBlock/InfoBlock";
-import MailBox from "../../assets/mailbox";
+import MailBox from "../../assets/Mailbox";
 import Heading from "../../components/Heading/Heading";
-import Laptop from "../../assets/laptop";
+import Laptop from "../../assets/Laptop";
+import { connect } from "react-redux";
+import { toggleNavMenu } from "./actions";
+import { mobileNavOpen$ } from "./selectors";
 
-export default function InTouchView() {
+export interface Props {
+  toggleNavMenu?: () => void;
+  isMenuOpen?: boolean;
+}
+
+function InTouchView(props: Props) {
+  const { toggleNavMenu, isMenuOpen = false } = props;
   return (
     <div className={"intouch-view"}>
       <Header
         headerClass={"intouch-header"}
-        headerLinks={HEADER_LINKS}
+        headerLinks={
+          isMenuOpen
+            ? [
+                {
+                  destination: "/",
+                  label: "Main",
+                  component: <></>,
+                },
+                ...HEADER_LINKS,
+              ]
+            : HEADER_LINKS
+        }
         headerWrapperClasses={"header-wrapper"}
         headerLogoLabel={"MADAPPGANG"}
         headerButtonLabel={"GET IN TOUCH"}
         buttonWrapperClasses={"header-button-wrapper"}
+        mobileMenuHandler={toggleNavMenu}
+        isMobileMenuOpen={isMenuOpen}
       />
 
-      <Section sectionClasses={"contact-form-section"}>
+      <Section
+        sectionClasses={`contact-form-section ${isMenuOpen ? "d-none" : ""}`}
+      >
         <div className={"contact-form-wrapper"}>
           <div className={"headers-wrapper"}>
             <Heading label={"Get in touch"} size={1} />
@@ -70,7 +94,7 @@ export default function InTouchView() {
         </div>
       </Section>
 
-      <Section sectionClasses={"about-section"}>
+      <Section sectionClasses={`about-section ${isMenuOpen ? "d-none" : ""}`}>
         <div className={"about-wrapper"}>
           <div className="about-messages-wrapper">
             {ABOUT_SECTION_MESSAGES.map((msg, index) => (
@@ -83,13 +107,15 @@ export default function InTouchView() {
               links={SOCIAL_MEDIA_LINKS}
               socialMediaLinksWrapperClasses={"social-media-links-wrapper"}
             />
-            <MailBox svgClasses={"mailbox-svg"} />
+            <a href="mailto:madappgang.com">
+              <MailBox svgClasses={"mailbox-svg"} />
+            </a>
           </div>
         </div>
       </Section>
 
       <Footer
-        footerClass={"intouch-footer"}
+        footerClass={`intouch-footer ${isMenuOpen ? "d-none" : ""}`}
         footerLinks={FOOTER_LINKS}
         footerInfoMsg={"© MadAppGang Pty Ltd, 2018"}
         footerWrapperClasses={"footer-wrapper"}
@@ -97,3 +123,19 @@ export default function InTouchView() {
     </div>
   );
 }
+
+const mapStateToProps = (state: {
+  [key: string]: any;
+}): { [key: string]: any } => {
+  return {
+    isMenuOpen: mobileNavOpen$(state),
+  };
+};
+
+const mapDispatchToProps = (dispatch: Function) => {
+  return {
+    toggleNavMenu: () => dispatch(toggleNavMenu()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(InTouchView);

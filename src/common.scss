@@ -9,6 +9,7 @@ $primary-form-bg-color: #0056dd;
 $semi-transparent-white: #ffffff80;
 $light-white: #f3f6fa;
 $general-padding: 24px 6.25%;
+$social-icons-bg: #707e8c26;
 
 .flex-center-between {
   display: flex;
@@ -38,4 +39,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.d-none {
+  display: none;
 }

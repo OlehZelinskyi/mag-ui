@@ -11,6 +11,7 @@ export interface PreloadedState {
     response: any;
     errors: B;
     modal: B;
+    mobileNavOpen: boolean;
   };
 }
 
@@ -23,6 +24,7 @@ const preloadedState: PreloadedState = {
       [ERRORS]: false,
       [LOADING]: false,
     },
+    mobileNavOpen: false,
   },
 };
 

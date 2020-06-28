@@ -6,6 +6,7 @@ import {
   SUCCESS,
   ERRORS,
   LOADING,
+  TOGGLE_NAV_MENU,
 } from "./constants";
 import { B } from "./sagas/sendMessage";
 
@@ -13,6 +14,7 @@ export interface State {
   response: any;
   errors: B;
   modal: B;
+  mobileNavOpen: boolean;
 }
 
 const initialState: State = {
@@ -23,6 +25,7 @@ const initialState: State = {
     [ERRORS]: false,
     [LOADING]: false,
   },
+  mobileNavOpen: false,
 };
 
 const messageReducer = (state: State = initialState, action: AnyAction) => {
@@ -39,6 +42,8 @@ const messageReducer = (state: State = initialState, action: AnyAction) => {
           [action.payload]: !state.modal[action.payload],
         },
       };
+    case TOGGLE_NAV_MENU:
+      return { ...state, mobileNavOpen: !state.mobileNavOpen };
     default:
       return state;
   }

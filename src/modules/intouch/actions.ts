@@ -3,6 +3,7 @@ import {
   VALIDATION_FAILED,
   SEND_MESSAGE_RESPONSE,
   TOGGLE_MODAL,
+  TOGGLE_NAV_MENU,
 } from "./constants";
 import { UserData } from "./typings";
 import { B } from "./sagas/sendMessage";
@@ -25,4 +26,8 @@ export const validationFailed = (errors: string[]) => ({
 export const toggleModal = (modalType: string) => ({
   type: TOGGLE_MODAL,
   payload: modalType,
+});
+
+export const toggleNavMenu = () => ({
+  type: TOGGLE_NAV_MENU,
 });

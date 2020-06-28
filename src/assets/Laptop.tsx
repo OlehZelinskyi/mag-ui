@@ -4,7 +4,7 @@ export interface Props {
   svgClasses: string;
 }
 
-export default (props: Props) => {
+export default function LaptopSVG(props: Props) {
   const { svgClasses } = props;
   return (
     <div className={svgClasses}>
@@ -82,4 +82,4 @@ export default (props: Props) => {
       ;
     </div>
   );
-};
+}

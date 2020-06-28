@@ -35,6 +35,7 @@
       }
     }
   }
+
   .intouch-view {
     .intouch-header,
     .contact-form-wrapper {
@@ -47,9 +48,45 @@
     }
 
     .header-wrapper {
-      .navigation,
       .header-button-wrapper {
         display: none;
+      }
+
+      .navigation {
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        padding: 0 20px 0 70px;
+        background-color: #fff;
+        -webkit-transition: left 0.25s ease-in-out;
+        transition: left 0.25s ease-in-out;
+        box-sizing: border-box;
+        z-index: 1;
+        nav {
+          ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          li {
+            margin-bottom: 20px;
+            padding: 0;
+            a {
+              font-family: "Circe";
+              font-size: 2.1em;
+              font-weight: 700;
+              line-height: 1;
+            }
+          }
+        }
+        &-open {
+          left: 0;
+        }
       }
     }
 
